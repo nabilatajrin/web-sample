@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<body>
+<ul id="list"><li><a href="link1.html" class="link_one">Link Number One</a></li><li><a href="link2.html">Link Number Two</a></li><li><a href="link3.html">Link Number Three</a></li><li><a href="link4.html">Link Number Four</a></li></ul>
+
+<div class="example">First div element with class="example".</div>
+
+<div class="example">Second div element with class="example".</div>
+
+<p>Click the button to change the text of the first div element with class="example" (index 0).</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<button onclick="createNewElement()">Create</button>
+
+<button onclick="removeLastChild()">Remove</button>
+
+<p><strong>Note:</strong> The getElementsByClassName() method is not supported in Internet Explorer 8 and earlier versions.</p>
+
+<script>
+function myFunction() {
+    //var x = document.getElementsByClassName("example");
+    //x[1].innerHTML = "Hello World!";
+    //alert("hi");
+    var myLinkList = document.getElementById("list");
+	alert(myLinkList.childNodes.length);
+var myFirstLink = myLinkList.childNodes[0].childNodes[0];
+alert(myFirstLink.className);
+}
+
+function createNewElement()
+{
+	var myNewListItem = document.createElement("li");
+	var myNewLink = document.createElement("a");
+	myNewLink.innerHTML = "Dynamic Link";
+	myNewLink.setAttribute("href", "http://www.google.com");
+	var myLinkList = document.getElementById("list");
+	myNewListItem.appendChild(myNewLink);
+	myLinkList.appendChild(myNewListItem);
+
+}
+
+function removeLastChild()
+{
+	var myLinkList = document.getElementById("list");
+	var myRemovedLink = myLinkList.lastChild;
+	myLinkList.removeChild(myRemovedLink);
+}
+</script>
+
+</body>
+</html>
