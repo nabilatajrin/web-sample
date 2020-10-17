@@ -1,2 +1,2 @@
 # web-sample
-A sample web project
+This repository contains a simple web project.
